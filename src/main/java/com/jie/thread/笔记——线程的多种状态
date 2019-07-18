@@ -1,0 +1,25 @@
+一、线程的生命周期：
+    1、新生（NEW）:实例化了Thread对象后
+    2、就绪、运行（RUNNABLE）;
+        就绪：
+           （1）调用了Thread.start()方法，
+           （2）调用了yield方法，
+           （3）阻塞消除，
+           （4）jvm将本地线程切换到其他线程
+        运行：
+            线程正常运行时
+    3、阻塞（WAITING、BLOCKED、TIME_WAITING）;
+        （1）WAITING: 一个线程在等待另一个线程执行一个动作时在这个状态，例如执行join方法之后
+        （2）BLOCKED：这种状态是指一个阻塞线程在等待monitor锁
+        （3）TIME_WAITING：一个线程在一个特定的等待时间内等待另一个线程完成一个动作会在这个状态，例如调用了sleep方法之后
+        阻塞的解释：https://segmentfault.com/a/1190000010973341
+    4、结束（TERMINATE）：线程执行完毕
+二、Thread类常用的方法
+    1、静态方法
+        （1）sleep()：使线程进入阻塞（TIME_WAITING）状态，对应时间过后线程进入就绪状态。
+        （2）yield(): 暂停线程，礼让出CPU，使线程进入就绪状态。
+        （3）currentThread(): 获取当前正在运行的线程。
+        （4）activeCount(): 获取当前存活的线程数。
+    2、普通方法
+        （1）join(): 插队方法，在thread1中调用thread2的join方法，thread1暂停，进入阻塞(WAITING)状态，等thread2执行完毕后继续执行thread1。
+        （2）start(): 使线程进入就绪状态。
