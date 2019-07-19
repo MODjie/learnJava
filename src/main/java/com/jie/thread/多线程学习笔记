@@ -1,4 +1,4 @@
-一、线程的生命周期：
+一、线程的生命周期：（2019-7-18）
     1、新生（NEW）:实例化了Thread对象后
     2、就绪、运行（RUNNABLE）;
         就绪：
@@ -18,8 +18,17 @@
     1、静态方法
         （1）sleep()：使线程进入阻塞（TIME_WAITING）状态，对应时间过后线程进入就绪状态。
         （2）yield(): 暂停线程，礼让出CPU，使线程进入就绪状态。
-        （3）currentThread(): 获取当前正在运行的线程。
+        （3）currentThread(): 获取当前正在运行的线程的实例。
         （4）activeCount(): 获取当前存活的线程数。
     2、普通方法
         （1）join(): 插队方法，在thread1中调用thread2的join方法，thread1暂停，进入阻塞(WAITING)状态，等thread2执行完毕后继续执行thread1。
         （2）start(): 使线程进入就绪状态。
+        （3）isAlive(): 判断被调用线程是否存活。
+三、线程的优先级：（2019-7-19）
+    1、线程的优先级分为三个等级：MIN_PRIORITY:1,NORMAL_PRIORITY:5,MAX_PRIORITY:10,数字越大优先级越高。
+    2、优先级高只代表CPU调度的概率变大，而不是绝对的CPU一定会先调。
+    3、一定要在调用start方法之前设置优先级，通过thread.setPriority()方法设置。
+
+四、守护线程：
+    1、使用thread.setDaemon(true)方法将用户线程设置为守护线程。
+    2、守护线程是在后台默默运行的线程，CPU以用户线程为准，当用户线程运行结束之后，守护线程就算没执行完毕也会停止。
