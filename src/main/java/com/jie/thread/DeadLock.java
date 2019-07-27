@@ -54,7 +54,6 @@ class Girl implements Runnable{
         this.choice = choice;
     }
 
-    @Override
     public void run() {
         this.makeUp2();
     }
