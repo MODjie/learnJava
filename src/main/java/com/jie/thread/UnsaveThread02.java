@@ -110,7 +110,7 @@ class People implements Runnable{
         drawingMoney();
     }
 
-    public synchronized void drawingMoney(){
+    public void drawingMoney(){
         if (this.account.getBalance()-this.takeMoneyFromAccount<0){
             System.out.println(this.getName()+"取钱时账户余额不足");
             return;
