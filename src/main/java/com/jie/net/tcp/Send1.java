@@ -48,11 +48,10 @@ public class Send1 implements Runnable{
                 this.send(sendMsg);
             } catch (IOException e) {
                 e.printStackTrace();
-            }finally {
                 try {
                     release();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
                 }
             }
         }

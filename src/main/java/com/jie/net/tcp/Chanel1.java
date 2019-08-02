@@ -43,11 +43,10 @@ public class Chanel1 implements Runnable{
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
             try {
                 release();
-            } catch (IOException e) {
-                System.out.println("释放资源失败");
+            } catch (IOException e1) {
+                e1.printStackTrace();
             }
         }
     }
