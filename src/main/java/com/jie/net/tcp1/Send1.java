@@ -1,4 +1,4 @@
-package com.jie.net.tcp;
+package com.jie.net.tcp1;
 
 import com.jie.util.TcpUtil;
 
@@ -7,7 +7,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.nio.Buffer;
 
 /**
  * 项目名称：learnJava

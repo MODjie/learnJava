@@ -1,11 +1,10 @@
-package com.jie.net.tcp;
+package com.jie.net.tcp1;
 
 import com.jie.util.TcpUtil;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
@@ -16,27 +15,19 @@ import java.net.Socket;
  * 创 建 人：杰哥
  */
 public class Chanel1 implements Runnable{
-    private ServerSocket serverSocket;
     private Socket client;
     private boolean isRunning;
     private DataInputStream dis;
     private DataOutputStream dos;
 
-    public Chanel1(int port) {
-        try {
-            this.serverSocket = new ServerSocket(port);
+    public Chanel1(Socket client) {
+            this.client =client;
             isRunning = true;
-            System.out.println("服务器已经启动");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
     public void run() {
         try {
-            client = serverSocket.accept();
-            System.out.println("一个客户端已连接");
             while (isRunning){
                 String receiveMsg = this.receive(client);
                 this.send(client,receiveMsg);
