@@ -1,0 +1,5 @@
+一、获取反射的三种方式：（2019-8-05）
+    1、引用调用getClass（Class c = test.getClass()）;
+    2、类名.Class(Class c = Test.class);
+    3、通过Class类的forName("包名.类名")(Class c = Class.forName("com.jie.webserver.Test"));
+    4、通过反射获取对象： 通过构造器方式获取对象(Test = (Test) c.getConstructor().newInstance())
