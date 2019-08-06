@@ -1,4 +1,4 @@
-package com.jie.net.tcp1;
+package com.jie.net.tcp;
 
 import java.io.IOException;
 import java.net.ServerSocket;

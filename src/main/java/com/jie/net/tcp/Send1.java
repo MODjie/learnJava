@@ -1,4 +1,4 @@
-package com.jie.net.tcp1;
+package com.jie.net.tcp;
 
 import com.jie.util.TcpUtil;
 
