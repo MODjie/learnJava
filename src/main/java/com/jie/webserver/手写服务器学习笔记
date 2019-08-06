@@ -3,3 +3,13 @@
     2、类名.Class(Class c = Test.class);
     3、通过Class类的forName("包名.类名")(Class c = Class.forName("com.jie.webserver.Test"));
     4、通过反射获取对象： 通过构造器方式获取对象(Test = (Test) c.getConstructor().newInstance())
+二、通过JDK提供的SAX相关类解析XML文件（2019-8-06）
+    1、通过SAXParserFactory获取工厂实例
+    2、通过工厂实例获取SAXParser实例
+    3、实现处理器，继承DefaultHandler类，重写相关解析方法
+    4、通过SAXParser实例的parse方法，传入XML文件和处理器。
+    如下：
+    SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+    SAXParser saxParser = saxParserFactory.newSAXParser();
+    PersonHandler personHandler = new PersonHandler();
+    saxParser.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream("p.xml"),personHandler);
